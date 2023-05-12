@@ -247,8 +247,21 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
+# Vòng đời của một Component (life cycle)
 
 
+![image](https://github.com/thangdtph27626/about_reactjs/assets/109157942/ee04f73e-0465-420d-a0e3-d4c7dae84aad)
 
+Vòng đời của một component trải qua 4 giai đoạn: Initialization, Mounting, Update, và UnMounting
+- Initialization: Đây là giai đoạn đầu tiên của vòng đời một component.
+  + Ở giai đoạn này component bắt đầu thiết lập các state và props của nó.
+- Mounting: Trong giai đoạn này, component được hiển thị bên trong DOM. Giai đoạn này được thực hiện sau giai đoạn Initialization. Tại giai đoạn này, các component sẽ được render lần đầu tiên và chúng có những phương thức để xử lý trong giai đoạn này
+  + componentDidMount(): Phương thức này được gọi sau khi component được thêm vào DOM.
+  + render(): Phương thức này có ở mọi component, nó trả về HTML node.
+- Update: Trong giai đoạn này, các DOM được người dùng tương tác và được cập nhật. Ví dụ người dùng click vào một button nào đó và làm state thay đổi dẫn đến component sẽ được re-render lại.Trong giai đoạn này có các phương thức chính như:
+  + shouldComponentUpdate(): Phương thức này được gọi khi component được update.
+  + componentDidUpdate(): Được gọi sau khi component đã được update
+- UnMounting: Đây là giai đoạn cuối cùng của vòng đời một component, ở giai đoạn này component sẽ bị loại bỏ khỏi DOM.
+  + ComponentwillUnmount(): Được gọi khi component bị loại bỏ khỏi DOM.
 
 
