@@ -1,11 +1,11 @@
 <p align="center">
- <h2 align="center">Tìm hiểu về reactjs</h2>
+ <h1 align="center">Tìm hiểu về reactjs</h1>
 </p>
 
-# Reactjs là gì?
+## Reactjs là gì?
 ReactJS là một thư viện JavaScript mã nguồn mở được phát triển bởi Facebook, ra mắt vào năm 2013 với mục đích để xây dựng giao diện người dùng. Nó được sử dụng rộng rãi để xây dựng các trang web SPA (Single Page Application). Nó rất dễ sử dụng và cho phép người dùng có thể tạo các component UI có thể tái sử dụng.
 
-# Những tính năng reactjs 
+## Những tính năng reactjs 
 
 - JSX: viết tắt của JavaScript extension, nó là React extension , giúp cho việc thay đổi cây DOM dễ dàng hơn bằng HTML-style code đơn giản. Nó là một trong những tính năng tốt và dễ sử dụng.
 - Single-way data flow: 
@@ -17,8 +17,9 @@ ReactJS là một thư viện JavaScript mã nguồn mở được phát triển
  + Virtual Dom được hiểu như là một mô hình đối tượng tài liệu ảo
  + React xây dựng một bộ cấu trúc đệm cho dữ liệu ở bộ nhớ để tính toán các thay đổi, sau đó update trình duyệt
 
-# Tạo một project reactjs
- ## 1 Sử dụng NPM Packages
+## Tạo một project reactjs
+
+### 1 Sử dụng NPM Packages
 Trước khi bắt tay vào làm việc với ReactJS bằng npm package thì hãy chắc rằng bạn đã cài đặt nodejs. Nếu chưa, bạn có thể vào trang chủ nodejs tại đây, tải về và cài đặt.
 
 ```
@@ -29,7 +30,7 @@ npm start
 
 ![image](https://github.com/thangdtph27626/about_reactjs/assets/109157942/5baca550-3d8a-4d64-ae82-1dc4abd179d5)
 
- ## 2 Sử dụng cdn 
+ ### 2 Sử dụng cdn 
  Để bắt đầu làm việc với React thì trước tiên chúng ta cần cài đặt ReactJS. Việc cài đặt rất dễ dàng, bạn chỉ cần sử dụng các file CDN mà React cung cấp.
  
  ```
@@ -40,12 +41,13 @@ npm start
  
  ![image](https://github.com/thangdtph27626/about_reactjs/assets/109157942/513c66e8-0fe9-44c5-9b7b-4383571b8b48)
 
-# JSX là gì?
+## JSX là gì?
 
 JSX là một phần mở rộng của JavaScript, nó là một template script mà bạn có thể sử dụng HTML và JavaScript cùng nhau.
 
 Sử dụng:
 - Cú pháp tương đối giống với HTML và có khả năng sử dụng biểu thức logic vào JSX
+
 ```
 // my-app/src/App.js
 import logo from './logo.svg';
@@ -64,6 +66,7 @@ export default App;
 ```
 
 - Định style sử dụng cú pháp camelCase và tự động thêm px sau giá trị là số của các phần tử
+
 ```
 import logo from './logo.svg';
 import './App.css';
@@ -87,7 +90,7 @@ export default App;
 ```
 - sử dụng className và htmlFor thay vì class và for.
 
-# Component trong ReactJS
+## Component trong ReactJS
 
 - Component chúng ta có thể hiểu là những function JavaScript thuần túy, giúp ta code dễ dàng hơn bằng cách tách logic code thành một đoạn code độc lập mà có thể tái sử dụng lại.
 - Để nói về component thì nó có hai cách viết, một là dạng function component và hai là class component. Chúng ta cùng tìm hiểu hai cách viết này có gì khác nhau nào.
@@ -139,7 +142,7 @@ function App() {
 export default App;
 ```
 
-#  State là gì? Props là gì? Chúng có giống nhau không?
+##  State là gì? Props là gì? Chúng có giống nhau không?
 
 - Props (properties) là data được truyền vào từ component cha và có thể truy cập ở các component con. Nó hoạt động như một object global hoặc như các biến có thể sử dụng bên trong component.
  + Props chỉ để đọc. Cho dù bạn khai báo component dưới dạng hàm hay class thì nó vẫn không bao giờ có thể sửa đổi props của chính nó.
@@ -216,7 +219,7 @@ function App() {
 export default App;
 
 ```
-# Xử lý sự kiện
+## Xử lý sự kiện
 - Xử lý các sự kiện với các phần tử React rất giống với việc xử lý các sự kiện trên các phần tử DOM. Có một số khác biệt về cú pháp:
   + Các sự kiện phản ứng được đặt tên bằng cách sử dụng camelCase, thay vì chữ thường.
   + Với JSX, bạn chuyển một hàm làm trình xử lý sự kiện, thay vì một chuỗi.
@@ -226,7 +229,7 @@ export default App;
 </button>
 ```
 
-# List & Key
+## List & Key
 - Bạn có thể xây dựng các bộ sưu tập phần tử và đưa chúng vào JSX bằng cách sử dụng dấu ngoặc nhọn {}.
 - Lặp qua numbers  bằng hàm JavaScript map(). Chúng tôi trả về một <li>phần tử cho mỗi mục. Cuối cùng, chúng ta gán mảng kết quả gồm các phần tử cho listItems:
 ```
@@ -256,7 +259,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-# Vòng đời của một Component (life cycle)
+## Vòng đời của một Component (life cycle)
 
 
 ![image](https://github.com/thangdtph27626/about_reactjs/assets/109157942/ee04f73e-0465-420d-a0e3-d4c7dae84aad)
