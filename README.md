@@ -30,7 +30,9 @@ npm start
 
 ![image](https://github.com/thangdtph27626/about_reactjs/assets/109157942/5baca550-3d8a-4d64-ae82-1dc4abd179d5)
 
- ### 2 Sử dụng cdn 
+
+ ### 2 Sử dụng cdn
+ 
  Để bắt đầu làm việc với React thì trước tiên chúng ta cần cài đặt ReactJS. Việc cài đặt rất dễ dàng, bạn chỉ cần sử dụng các file CDN mà React cung cấp.
  
  ```
