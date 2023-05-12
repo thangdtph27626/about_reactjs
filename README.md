@@ -239,14 +239,14 @@ const listItems = numbers.map((number) =>
  ```
  + Khi bạn không có ID ổn định cho các mục được kết xuất, bạn có thể sử dụng chỉ mục mục làm khóa như là phương sách cuối cùng:
 ```
-
-```
 const todoItems = todos.map((todo, index) =>
   // Only do this if items have no stable IDs
   <li key={index}>
     {todo.text}
   </li>
 );
+```
+
 
 
 
