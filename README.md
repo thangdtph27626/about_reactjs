@@ -89,5 +89,166 @@ export default App;
 
 # Component trong ReactJS
 
-Component chúng ta có thể hiểu là những function JavaScript thuần túy, giúp ta code dễ dàng hơn bằng cách tách logic code thành một đoạn code độc lập mà có thể tái sử dụng lại.
+- Component chúng ta có thể hiểu là những function JavaScript thuần túy, giúp ta code dễ dàng hơn bằng cách tách logic code thành một đoạn code độc lập mà có thể tái sử dụng lại.
+- Để nói về component thì nó có hai cách viết, một là dạng function component và hai là class component. Chúng ta cùng tìm hiểu hai cách viết này có gì khác nhau nào.
+ + Function component:
+ ```
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+function Test(props) {
+  return (
+    <div>hello {props.name} </div>
+  )
+}
+
+function App() {
+
+  return (
+    <div className="App">
+     <Test name={"word"}></Test>
+    </div>
+  );
+}
+
+export default App;
+```
+  + Class component:
+  
+```
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+
+function App() {
+
+  return (
+    <div className="App">
+     <Car></Car>
+    </div>
+  );
+}
+
+export default App;
+```
+
+#  State là gì? Props là gì? Chúng có giống nhau không?
+
+- Props (properties) là data được truyền vào từ component cha và có thể truy cập ở các component con. Nó hoạt động như một object global hoặc như các biến có thể sử dụng bên trong component.
+ + Props chỉ để đọc. Cho dù bạn khai báo component dưới dạng hàm hay class thì nó vẫn không bao giờ có thể sửa đổi props của chính nó.
+ + Props là cách để các component giao tiếp với nhau
+ +  Props được truyền từ component cha
+ 
+```
+cách 1 
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+function Test(props) {
+  return (
+    <div>hello {props.name} </div>
+  )
+}
+
+function App() {
+
+  return (
+    <div className="App">
+     <Test name={"word"}></Test>
+    </div>
+  );
+}
+
+export default App;
+
+cách 2
+
+function Test({name}) {
+  return (
+    <div>hello {name} </div>
+  )
+}
+
+function App() {
+
+  return (
+    <div className="App">
+     <Test name={"word"}></Test>
+    </div>
+  );
+}
+
+export default App;
+
+```
+- State là một object javascript tương tự như props, nó chứa dữ liệu được sử dụng để react render. Dữ liệu của state là một private object và được sử dụng bên trong các component.
+
+```
+import './App.css';
+import React, { useState } from 'react';
+
+function Test() {
+  const name = "word "
+    return (
+      <>
+       <h1>hello {name}</h1>
+      </>
+    );
+}
+
+function App() {
+
+  return (
+    <div className="App">
+     <Test ></Test>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+# List & Key
+- Bạn có thể xây dựng các bộ sưu tập phần tử và đưa chúng vào JSX bằng cách sử dụng dấu ngoặc nhọn {}.
+- Lặp qua numbers  bằng hàm JavaScript map(). Chúng tôi trả về một <li>phần tử cho mỗi mục. Cuối cùng, chúng ta gán mảng kết quả gồm các phần tử cho listItems:
+```
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+```
+- Key rất hữu ích khi làm việc với các component được tạo động hoặc khi danh sách của bạn bị thay đổi bởi người dùng. Việc đặt giá trị key sẽ giữ cho các component được xác định là duy nhất xác định mục nào đã thay đổi, được thêm vào hoặc bị xóa.
+ + Cách tốt nhất để chọn một khóa là sử dụng một chuỗi xác định duy nhất một mục danh sách trong số các anh chị em của nó. Thông thường, bạn sẽ sử dụng ID từ dữ liệu của mình làm khóa:
+ ```
+ const todoItems = todos.map((todo) =>
+  <li key={todo.id}>
+    {todo.text}
+  </li>
+);
+ ```
+ + Khi bạn không có ID ổn định cho các mục được kết xuất, bạn có thể sử dụng chỉ mục mục làm khóa như là phương sách cuối cùng:
+```
+
+```
+const todoItems = todos.map((todo, index) =>
+  // Only do this if items have no stable IDs
+  <li key={index}>
+    {todo.text}
+  </li>
+);
+
+
+
+
 
