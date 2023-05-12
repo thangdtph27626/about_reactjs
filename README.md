@@ -216,6 +216,15 @@ function App() {
 export default App;
 
 ```
+# Xử lý sự kiện
+- Xử lý các sự kiện với các phần tử React rất giống với việc xử lý các sự kiện trên các phần tử DOM. Có một số khác biệt về cú pháp:
+  + Các sự kiện phản ứng được đặt tên bằng cách sử dụng camelCase, thay vì chữ thường.
+  + Với JSX, bạn chuyển một hàm làm trình xử lý sự kiện, thay vì một chuỗi.
+```
+<button onClick={activateLasers}>
+  Activate Lasers
+</button>
+```
 
 # List & Key
 - Bạn có thể xây dựng các bộ sưu tập phần tử và đưa chúng vào JSX bằng cách sử dụng dấu ngoặc nhọn {}.
