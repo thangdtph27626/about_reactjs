@@ -95,6 +95,7 @@ export default App;
 - Component chúng ta có thể hiểu là những function JavaScript thuần túy, giúp ta code dễ dàng hơn bằng cách tách logic code thành một đoạn code độc lập mà có thể tái sử dụng lại.
 - Để nói về component thì nó có hai cách viết, một là dạng function component và hai là class component. Chúng ta cùng tìm hiểu hai cách viết này có gì khác nhau nào.
  + Function component:
+ 
  ```
 import logo from './logo.svg';
 import './App.css';
@@ -117,7 +118,8 @@ function App() {
 
 export default App;
 ```
-  + Class component:
+
++ Class component:
   
 ```
 import logo from './logo.svg';
@@ -192,6 +194,7 @@ function App() {
 export default App;
 
 ```
+
 - State là một object javascript tương tự như props, nó chứa dữ liệu được sử dụng để react render. Dữ liệu của state là một private object và được sử dụng bên trong các component.
 
 ```
@@ -217,12 +220,13 @@ function App() {
 }
 
 export default App;
-
 ```
+
 ## Xử lý sự kiện
 - Xử lý các sự kiện với các phần tử React rất giống với việc xử lý các sự kiện trên các phần tử DOM. Có một số khác biệt về cú pháp:
   + Các sự kiện phản ứng được đặt tên bằng cách sử dụng camelCase, thay vì chữ thường.
   + Với JSX, bạn chuyển một hàm làm trình xử lý sự kiện, thay vì một chuỗi.
+  
 ```
 <button onClick={activateLasers}>
   Activate Lasers
@@ -232,6 +236,7 @@ export default App;
 ## List & Key
 - Bạn có thể xây dựng các bộ sưu tập phần tử và đưa chúng vào JSX bằng cách sử dụng dấu ngoặc nhọn {}.
 - Lặp qua numbers  bằng hàm JavaScript map(). Chúng tôi trả về một <li>phần tử cho mỗi mục. Cuối cùng, chúng ta gán mảng kết quả gồm các phần tử cho listItems:
+ 
 ```
 const numbers = [1, 2, 3, 4, 5];
 const listItems = numbers.map((number) =>
@@ -240,16 +245,20 @@ const listItems = numbers.map((number) =>
   </li>
 );
 ```
+
 - Key rất hữu ích khi làm việc với các component được tạo động hoặc khi danh sách của bạn bị thay đổi bởi người dùng. Việc đặt giá trị key sẽ giữ cho các component được xác định là duy nhất xác định mục nào đã thay đổi, được thêm vào hoặc bị xóa.
  + Cách tốt nhất để chọn một khóa là sử dụng một chuỗi xác định duy nhất một mục danh sách trong số các anh chị em của nó. Thông thường, bạn sẽ sử dụng ID từ dữ liệu của mình làm khóa:
- ```
+
+```
  const todoItems = todos.map((todo) =>
   <li key={todo.id}>
     {todo.text}
   </li>
 );
  ```
- + Khi bạn không có ID ổn định cho các mục được kết xuất, bạn có thể sử dụng chỉ mục mục làm khóa như là phương sách cuối cùng:
+
++ Khi bạn không có ID ổn định cho các mục được kết xuất, bạn có thể sử dụng chỉ mục mục làm khóa như là phương sách cuối cùng:
+
 ```
 const todoItems = todos.map((todo, index) =>
   // Only do this if items have no stable IDs
